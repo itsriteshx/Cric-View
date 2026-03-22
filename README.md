@@ -1,8 +1,7 @@
 # Cric-View
-A simple React app to view live cricket matches with search, filter and sorting features
-#  Cricket Live Dashboard
+A simple React app to view live cricket matches with search, filter and sorting features.
 
-## About Project
+##  About Project
 This is a web app where we can see live cricket matches and match details.  
 User can search matches, filter them and also sort the data.
 
@@ -12,8 +11,6 @@ Main goal of this project is to learn JavaScript, React and API calling and how 
 ## 🔗 API Used
 CricketData API  
 https://cricketdata.org/
-
-## Features
 
 ### Core Features
 - Show live cricket matches  
@@ -25,19 +22,13 @@ https://cricketdata.org/
 - Dark mode option  
 - Add matches to favorite  
 
-## Tech Used
+##  Tech Used
 - HTML  
 - CSS  
 - JavaScript  
 - React  
 
-## How to Run
+##  How to Run
 1. Clone the project  
-2. Run `npm install`  
-3. Run `npm start`  
-
-## Progress
-- Milestone 1: Project setup and planning  
-- Milestone 2: API integration  
-- Milestone 3: Features add karna  
-- Milestone 4: Final project and deploy  
+2. Run npm install  
+3. Run npm start  
