@@ -1,45 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cric-View | Live Cricket Updates</title>
-
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header class="navbar">
     <div class="logo">
       <i class="fa-solid fa-fire-flame-curved"></i> Cric-View
     </div>
-
     <div class="nav-links">
       <a href="#" class="active">Live</a>
+      <a href="#favorites-section">Favorites</a>
     </div>
+    
+    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+      <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
   </header>
-
-
+ 
   <section class="hero">
     <h1>Live Cricket Scores & Updates</h1>
     <p>Get real-time match data, live scores, and schedules.</p>
   </section>
-
-
+ 
   <section class="controls">
     <div class="search-box">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input 
-        type="text" 
-        id="searchInput" 
+      <input
+        type="text"
+        id="searchInput"
         placeholder="Search team..."
       >
     </div>
-
-
     <div class="filter-box">
       <select id="typeFilter">
         <option value="all">All Match Types</option>
@@ -48,27 +45,67 @@
         <option value="test">Test</option>
       </select>
     </div>
-
-
+    
+    <div class="filter-box">
+      <select id="sortFilter">
+        <option value="default">Sort By</option>
+        <option value="az">Name A → Z</option>
+        <option value="za">Name Z → A</option>
+        <option value="type">Match Type</option>
+      </select>
+    </div>
     <button class="btn-refresh" id="refreshBtn">
       <i class="fa-solid fa-rotate-right"></i>
       <span>Refresh</span>
     </button>
-
   </section>
+ 
 
+  <div class="stats-bar" id="statsBar" style="display:none;">
+    <span id="totalCount">Total: 0</span>
+    <span id="liveCount">🟢 Live: 0</span>
+    <span id="favCount">⭐ Favorites: 0</span>
+  </div>
+ 
 
+  <div id="loadingSpinner" class="loading-spinner" style="display:none;">
+    <div class="spinner"></div>
+    <p>Fetching live matches...</p>
+  </div>
+ 
   <main>
-    <div id="matches" class="matches-grid">
-      
-    </div>
+    <div id="matches" class="matches-grid"></div>
   </main>
+ 
+ 
+  <section id="favorites-section" class="favorites-section" style="display:none;">
+    <h2><i class="fa-solid fa-star"></i> My Favorites</h2>
+    <div id="favoritesGrid" class="matches-grid"></div>
+  </section>
+ 
 
-  
+  <div class="pagination" id="pagination"></div>
+  <div class="toast" id="toast"></div>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <h2 id="modalTitle"></h2>
+      <p id="modalStatus"></p>
+      <p id="modalType"></p>
+      <p id="modalTeams"></p>
+      <p id="modalDate"></p>
+      <p id="modalVenue"></p>
+      <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.remove('open')">
+        Close
+      </button>
+    </div>
+  </div>
+ 
   <footer>
     <p>&copy; 2026 Cric-View. All rights reserved.</p>
+    <p style="font-size:11px; margin-top:6px; color:#64748b;">Built with ❤️ using CricAPI</p>
   </footer>
-
+ 
   <script src="script.js"></script>
 </body>
 </html>
+ 
